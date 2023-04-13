@@ -19,30 +19,33 @@ function App() {
         <div className="transactions">
           <div className="transaction">
             <div className="left">
-              <div className="name">New samsung TV</div>
+              <div className="name">New TV</div>
               <div className="description">Impulsive buyer</div>
             </div>
-            <div className="right"></div>
-              <div className="price">$500</div>
-              <div className="datetime">2023-04-12 13:30</div>
+            <div className="right">
+              <div className="price rojo">-$500</div>
+               <div className="datetime">2023-04-12 13:30</div>
+               </div>
           </div>
           <div className="transaction">
             <div className="left">
-              <div className="name">New samsung TV</div>
+              <div className="name">Gig job new website</div>
               <div className="description">Impulsive buyer</div>
             </div>
-            <div className="right"></div>
-              <div className="price">$500</div>
+            <div className="right">
+              <div className="price green">+$400</div>
               <div className="datetime">2023-04-12 13:30</div>
+              </div>
           </div>
           <div className="transaction">
             <div className="left">
-              <div className="name">New samsung TV</div>
+              <div className="name">Cemita</div>
               <div className="description">Impulsive buyer</div>
             </div>
-            <div className="right"></div>
-              <div className="price">$500</div>
-              <div className="datetime">2023-04-12 13:30</div>
+            <div className="right">
+              <div className="price rojo"> -$32 </div>
+              <div className="datetime"> 2023-04-12 13:30 </div>
+              </div>
           </div>
         </div>
     </main>
