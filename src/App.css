@@ -42,7 +42,7 @@ form button{
   background-color: #ddd;
 }
   div.transactions{
-    margin-top: 5px;
+    margin-top: 10px;
   }
   div.transaction{
     display: flex;
@@ -50,8 +50,8 @@ form button{
     justify-content: space-between;
     border-top: 1px solid #30313d;
   }
-  div.trasaction:first-child{
-    border-top:0;
+  div.transaction:first-child{
+    border-top: 0;
   }
   div.transaction div.name{
     font-size: 1rem;
