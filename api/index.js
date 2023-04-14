@@ -2,14 +2,12 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-    res.send('test');
+    res.json('test ok');
   });
 
   app.post("/api/transaction", (req, res) =>{
-
+    res.json(req.body);
   });
 
-  app.listen(4040, () => {
-    console.log('Server started on port 3000');
-  });
+  app.listen(4040,)
   

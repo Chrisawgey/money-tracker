@@ -6,11 +6,18 @@ function App() {
   const [name,setName] = useState('');
   const [datetime,setdateTime] = useState('');
   const [description,setDescription] = useState('');
+  function addNewTransaction() {
+    function addNewTransaction(ev) {
+      ev.preventDefault();
+      const url = process.env.REACT_APP_API_URL;
+      console.log(url);
+    }
+  }
   return (
     <main>
       <h1>
         $400<span>.00</span></h1>
-        <form>
+        <form onSubmit={addNewTransaction}>
         <div className="basic">
           <input type="text" 
                  value={name}
