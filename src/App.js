@@ -9,8 +9,16 @@ function App() {
   function addNewTransaction() {
     function addNewTransaction(ev) {
       ev.preventDefault();
-      const url = process.env.REACT_APP_API_URL;
-      console.log(url);
+      const url = process.env.REACT_APP_API_URL+'/transaction';
+      fetch(url, init,{
+        method: 'POST',
+        headers: {'Content-type':'application/json'},
+        body: JSON.stringify(value, {name,description,datetime})
+      }).then(response => {
+        response.json().then(json => {
+          console.log('result', json);
+        });
+      });
     }
   }
   return (
