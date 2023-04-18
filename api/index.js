@@ -4,7 +4,7 @@ const app = express();
 
 app.use(cors());
 app.get('/api/test', (req, res) => {
-    res.json('test ok');
+    res.json('test');
   });
 
   
