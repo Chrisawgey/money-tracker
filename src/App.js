@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
 
@@ -41,16 +40,24 @@ function App() {
         });
       });      
 }
+  let balance = 0;
+  for (const transaction of transactions) {
+    balance = balance + transaction.price;
+  }
+  
+  balance = balance.toFixed(2);
+  const fraction = balance.split('.')[1];
+
   return (
     <main>
       <h1>
-        $400<span>.00</span></h1>
+        ${balance}<span>{fraction}</span></h1>
         <form onSubmit={addNewTransaction}>
         <div className="basic">
           <input type="text" 
                  value={name}
                  onChange={ev => setName(ev.target.value)}
-                 placeholder={'+200 new samsung tv'}/>
+                 placeholder={'+amount spent on..'}/>
           <input value={datetime} 
                  onChange={ev => setdateTime(ev.target.value)}
                  type="datetime-local"/>
