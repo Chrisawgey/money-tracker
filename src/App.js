@@ -6,14 +6,16 @@ function App() {
   const [name,setName] = useState('');
   const [datetime,setdateTime] = useState('');
   const [description,setDescription] = useState('');
+  const [transactions,setTransactions] = useState([]);
+  
   useEffect(() => {
-    
+    getTransactions().then(setTransactions);
   }, []); 
 
   async function getTransactions(){
     const url = process.env.REACT_APP_API_URL+'/transactions';
     const response = await fetch(url);
-    return json = await response.json();
+    return await response.json();
   }
 
   function addNewTransaction(ev) {
@@ -62,37 +64,21 @@ function App() {
           <button type="submit">Add New Transaction</button>
         </form>
         <div className="transactions">
-          <div className="transaction">
+          {transactions.length > 0 && transactions.map(transaction =>(
+            <div className="transaction">
             <div className="left">
-              <div className="name">New TV</div>
-              <div className="description">Impulsive buyer</div>
+              <div className="name">{transaction.name}</div>
+              <div className="description">{transaction.description}</div>
             </div>
             <div className="right">
-              <div className="price rojo">-$500</div>
+              {console.log(transaction.price)}
+              <div className={"price " + (transaction.price<0?'rojo':'green')}>
+                {transaction.price}</div>
                <div className="datetime">2023-04-12 13:30</div>
                </div>
-          </div>
-          <div className="transaction">
-            <div className="left">
-              <div className="name">Gig job new website</div>
-              <div className="description">Impulsive buyer</div>
-            </div>
-            <div className="right">
-              <div className="price green">+$400</div>
-              <div className="datetime">2023-04-12 13:30</div>
               </div>
+          ))}
           </div>
-          <div className="transaction">
-            <div className="left">
-              <div className="name">Cemita</div>
-              <div className="description">Impulsive buyer</div>
-            </div>
-            <div className="right">
-              <div className="price rojo"> -$32 </div>
-              <div className="datetime"> 2023-04-12 13:30 </div>
-              </div>
-          </div>
-        </div>
     </main>
   );
 }
