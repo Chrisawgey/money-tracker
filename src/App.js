@@ -9,7 +9,7 @@ function App() {
   function addNewTransaction(ev) {
       ev.preventDefault();
       const url = process.env.REACT_APP_API_URL+'/transaction';
-      fetch(url, init:{
+      fetch(url, {
         method: 'POST',
         headers: {'Content-type':'application/json'},
         body: JSON.stringify({name, description, datetime})
