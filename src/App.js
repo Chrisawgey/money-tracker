@@ -1,16 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
   const [name,setName] = useState('');
   const [datetime,setdateTime] = useState('');
   const [description,setDescription] = useState('');
+  useEffect(() => {
+    
+  }, []); 
+
+  async function getTransactions(){
+    const url = process.env.REACT_APP_API_URL+'/transactions';
+    const response = await fetch(url);
+    return json = await response.json();
+  }
+
   function addNewTransaction(ev) {
       ev.preventDefault();
       const url = process.env.REACT_APP_API_URL+'/transaction';
       const price = name.split(' ')[0];
-      fetch(url, {
+      fetch(url, { 
         method: 'POST',
         headers: {'Content-type':'application/json'},
         body: JSON.stringify({
