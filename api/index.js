@@ -28,4 +28,6 @@ app.get('/api/test', (req, res) => {
   });
 
   app.listen(4040,)
+
+  module.exports = app;
   
