@@ -81,7 +81,7 @@ function App() {
               {console.log(transaction.price)}
               <div className={"price " + (transaction.price<0?'rojo':'green')}>
                 {transaction.price}</div>
-               <div className="datetime">2023-04-12 13:30</div>
+               <div className="datetime">2023-05-12 13:30</div>
                </div>
               </div>
           ))}
